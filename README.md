@@ -1,7 +1,7 @@
 # Wellington-Beamer-Theme
 This Beamer Theme is designed to be clean and simple. The slides do not include any unnecessary structure, only the slide title and content. It is suitable for general purpose presentations when you want to get across just your ideas.
 
-An example presentation demonstrating this theme can be seen here.
+An example presentation demonstrating this theme can be seen [here](https://github.com/michaelkirker/Wellington-Beamer-Theme/blob/master/Example_Wellington_theme.pdf).
 
 ## Contact Details
 
@@ -26,7 +26,7 @@ Git repository: https://github.com/michaelkirker/Wellington-Beamer-Theme
 
 ## How to Use the Theme
 
-For users that do not use Git, you can download the necessary files as a zip file.
+For users that do not use Git, you can download the necessary files as a [zip file](https://github.com/michaelkirker/Wellington-Beamer-Theme/archive/master.zip).
 
 If you are making a one-off presentation, copy the folder `/FiraSans/` and the file `beamerthemeWellington.sty` to the main folder of your presentation. Then include `\usetheme{Wellington}` in your Beamer presentation. As an example:
 
