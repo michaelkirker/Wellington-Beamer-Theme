@@ -1,0 +1,99 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+
+\usetheme{Wellington} % Load the theme to use
+
+\usepackage{lipsum} % Package for generating filler text
+
+
+%%%%%%%%%%%%
+% Preamble %
+%%%%%%%%%%%%
+
+\title{The Wellington Beamer Theme}
+
+\subtitle{A demo of the key elements of the theme}
+
+\date{Date}
+
+\author{Author's Name}
+
+\institute{Institution}
+
+
+
+
+
+\begin{document}
+
+
+\begin{frame}
+		\titlepage
+\end{frame}
+
+
+\begin{frame}{Example Text}
+	    \frametitle{Text Example}
+	     \lipsum[1]
+\end{frame}
+
+
+\begin{frame}{Special Text}
+This is standard text
+\textbf{This is bold text}
+\textit{This is italicised text}
+\alert{This is alert text}
+\end{frame}
+
+
+\begin{frame}{Animation}
+\onslide<1>{On slide 1}
+
+\onslide<2>{On slide 2}
+\end{frame}
+
+\begin{frame}{Lists}
+\framesubtitle{An Example of Lists}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+   Itemized list
+		\begin{itemize}
+			\item an item
+			\item another item
+                \begin{itemize}
+                  \item a sub-item
+                  \item another sub-item
+                \end{itemize}
+			\item yet another item
+		\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+    Enumerated list
+		\begin{enumerate}
+			\item an item
+			\item another item
+                \begin{enumerate}
+                  \item sub-item
+                  \item another sub-item
+                \end{enumerate}
+			\item yet another item
+		\end{enumerate}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Block Environment}
+    \begin{block}{Standard block}
+    Text
+    \end{block}
+    \begin{exampleblock}{Example block}
+    Text
+    \end{exampleblock}
+    \begin{alertblock}{Alert block}
+    Text
+    \end{alertblock}
+\end{frame}
+
+
+\end{document} 

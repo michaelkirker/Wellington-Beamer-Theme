@@ -1,0 +1,252 @@
+%================================================================================%
+%		WELLINGTON BEAMER THEME
+%================================================================================%
+%
+% 	Created by: Michael Kirker (http://michaelkirker.net)
+%
+%	The latest version of this theme is hosted at the Github repository
+%      https://github.com/michaelkirker/Wellington-Beamer-Theme
+%
+%================================================================================%
+
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{tikz}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		COLOR THEME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\definecolor{gray}{RGB}{90, 90, 90}
+\definecolor{BackgroundShade}{RGB}{250,250,250}
+\definecolor{LineColor}{RGB}{0,114,178}
+\definecolor{EnumerateColor}{RGB}{0,255,0}
+\definecolor{TitleBG}{RGB}{77,77,77}
+\definecolor{examplegreen}{RGB}{83,161,77}
+
+% http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/
+\definecolor{CBorange}{RGB}{230,159,0}
+\definecolor{CBskyblue}{RGB}{86,180,233}
+\definecolor{CBgreen}{RGB}{0,158,115}
+\definecolor{CByellow}{RGB}{240,228,66}
+\definecolor{CBblue}{RGB}{0,114,178}
+\definecolor{CBvermilion}{RGB}{213,94,0}
+\definecolor{CBreddishpurple}{RGB}{204,121,167}
+
+% UChicago colors
+\definecolor{ChicagoMaroon}{RGB}{128,0,0}
+\definecolor{ChicagoDarkGray}{RGB}{118,118,118}
+\definecolor{LightGray}{RGB}{214,214,214}
+\definecolor{ChicagoRed}{RGB}{143,57,49}
+\definecolor{ChicagoOrange}{RGB}{193,102,34}
+\definecolor{ChicagoLightGreen}{RGB}{138,157,69}
+\definecolor{ChicagoDarkGreen}{RGB}{101,109,51}	
+\definecolor{ChicagoBlue}{RGB}{21,95,131}
+\definecolor{ChicagoBlueLight}{RGB}{91,150,173}
+\definecolor{ChicagoBlueDark}{RGB}{21,67,95}
+\definecolor{ChicagoViolet}{RGB}{53,14,32}
+
+% Main background color
+\setbeamercolor*{background canvas}{bg=BackgroundShade}
+
+
+\setbeamercolor*{title}{fg=black}
+\setbeamercolor*{subtitle}{fg=black}
+
+\setbeamercolor*{author}{fg=TitleBG}
+\setbeamercolor*{institute}{fg=TitleBG}
+\setbeamercolor*{date}{fg=TitleBG}
+
+\setbeamercolor{button}{bg=LightGray,fg=white}
+
+\setbeamercolor{frametitle}{fg=white,bg=TitleBG}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		FONT THEME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setsansfont[
+  Path = FiraSans/,
+  BoldFont={FiraSans-Regular},
+  ItalicFont={FiraSans-LightItalic},
+  BoldItalicFont={FiraSans-BoldItalic},
+]{FiraSans-Light}
+
+\setbeamerfont{title}{size=\huge}
+\setbeamerfont{subtitle}{size=\large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		OUTER THEME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%================================================================================%
+% 		Customize footer (remove navigation symbols and add slide number)
+%================================================================================%
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]{}
+
+
+%================================================================================%
+% 		Frame Title
+%================================================================================%
+\setbeamercolor{palette quaternary}{fg=white,bg=TitleBG}
+\setbeamercolor{titlelike}{parent=palette quaternary}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		INNER THEME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%================================================================================%
+% Title Page
+%================================================================================%
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+  \vfill
+  \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+  \vspace{0.5ex}
+  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \vspace{-1ex}
+  \begin{beamercolorbox}[colsep=1pt,wd=\textwidth]{lower separation line head}
+      \begin{tikzpicture}[every node/.style={inner sep=0,outer sep=0}]
+        \shade [left color=LineColor,right color=BackgroundShade]
+          (0,0) rectangle (0.8\textwidth,1pt);
+          \node [above left] (russell) at (\paperwidth,0) %(10,3.5)
+        {};
+      \end{tikzpicture}
+  \end{beamercolorbox}
+  \vfill
+  %\centering
+  \begingroup
+  \leftskip2em
+  \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par
+  \smallskip
+  \usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par
+  \bigskip
+  \usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par
+  \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+  \endgroup
+}
+
+
+
+
+
+
+
+
+%%===============================================================================%
+%% 		Customise enumerates and itemized lists
+%%===============================================================================%
+
+% Enumerated lists:
+%---------------------
+
+\setbeamertemplate{enumerate items}[default] 	% Use numbers (e.g. "1.")
+
+\setbeamercolor*{enumerate item}{fg=CBblue}
+\setbeamercolor*{enumerate subitem}{fg=CBblue}
+\setbeamercolor*{enumerate subsubitem}{fg=CBblue}
+
+\setbeamertemplate{enumerate item}{{\bf \arabic{enumi}.}}
+\setbeamertemplate{enumerate subitem}{{\bf \alph{enumii}.}}
+\setbeamertemplate{enumerate subsubitem}{{\bf \roman{enumiii}.}}
+
+% Itemized lists:
+%---------------------
+
+\setbeamercolor*{itemize item}{fg=CBblue}
+\setbeamercolor*{itemize subitem}{fg=CBblue}
+\setbeamercolor*{itemize subsubitem}{fg=CBblue}
+
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[circle]
+
+
+% Space out itemized items a bit more
+%---------------------
+
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{\itemsep}
+\addtolength{\wideitemsep}{0.25em}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\itemsep}{\wideitemsep}\olditem}
+
+
+
+%%===============================================================================%
+%% 		Customise enumerates and itemized lists
+%%===============================================================================%
+	\setbeamercolor{block title}{fg=white,bg=ChicagoBlue}
+	\setbeamercolor{block body}{bg=ChicagoBlueLight!50!white}
+
+	\setbeamercolor{block title alerted}{fg=white,bg=ChicagoMaroon}
+	\setbeamercolor{block body alerted}{bg=ChicagoMaroon!25!white}
+	
+	\setbeamercolor{block title example}{bg=examplegreen,fg=white}
+	\setbeamercolor{block body example}{bg=examplegreen!25!white,fg=black}
+
+
+%%===============================================================================%
+%% 		ToC
+%%===============================================================================%
+\setbeamerfont{section number projected}{series=\bfseries,size=\normalsize}
+\setbeamercolor{section number projected}{fg=CBblue}
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=black}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		EXTRAS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation>{
+    \setbeamercovered{transparent}
+}
+
+%================================================================================%
+% 		Dont count appendix slides in the number of total slides displayed on
+%           lower right corner of each slide.
+%================================================================================%
+\makeatletter
+
+\let\appendixtotalframenumber\empty
+\def\mainend{-1}
+\let\appendixorig\appendix
+
+\def\appendix{
+  \edef\mainend{\theframenumber}
+  \immediate\write\@auxout{\string\global\string\@namedef{mainendframenumber}{\mainend}}
+  \appendixorig
+  \def\inserttotalframenumber{\appendixtotalframenumber}%
+  \setcounter{framenumber}{0}
+}
+
+\def\pageatend{
+  \edef\appendixend{\theframenumber}
+  \ifnum\mainend>0%
+  \immediate\write\@auxout{\string\global\string\@namedef{appendixtotalframenumber}{\appendixend}}%
+  \immediate\write\@auxout{\string\global\string\@namedef{inserttotalframenumber}{\mainend}}%
+  \immediate\write\@auxout{\string\@writefile{nav}{\noexpand \headcommand {%
+        \noexpand \def\noexpand \inserttotalframenumber{\mainend}}}}%
+  \immediate\write\@auxout{\string\@writefile{nav}{\noexpand \headcommand {%
+        \noexpand \def\noexpand \appendixtotalframenumber{\appendixend}}}}%
+  \else
+  \fi
+}
+
+
+\AtEndDocument{\pageatend}
+\makeatother
